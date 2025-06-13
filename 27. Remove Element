@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        ArrayList <Integer> NUMS = new ArrayList <Integer>();
+        for (int i = 0; i<nums.length; i++){
+            NUMS.add(nums[i]);
+        }
+        
+        for (int i = NUMS.size()-1; i>=0; i--) {
+            if (NUMS.get(i)==val) {
+                NUMS.remove(i);
+            }
+        }
+
+        for (int i=0; i<NUMS.size(); i++) {
+            nums[i] = NUMS.get(i);
+        }
+        return NUMS.size();
+    }
+}
