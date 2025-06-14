@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+
+        //Initialize variables ANS as an array list and n as a length of nums
+        ArrayList<Integer> ANS = new ArrayList<>();
+        int n = nums.length;
+    
+        //Loop through the nums to insert the first n elements to ANS
+        for (int i =0; i<n; i++) {
+            ANS.add(i, nums[i]);
+
+        }
+        //Loop the second time to complete the array with the same n elements
+        for (int i =0; i<n; i++) {
+            ANS.add(i, nums[i]);
+
+        }
+        //Convert ANS to int[] to satisfy the return type of the function
+        int[] ans = new int[2*n];
+        for (int i=0; i<ANS.size(); i++) {
+            ans[i] = ANS.get(i);
+        }
+        
+        return ans;
+    }
+}
